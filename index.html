@@ -1,1 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémo Interactif : Analyse des Parties Prenantes Petzl</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --accent-color: #FF6600;
+            --border-color: #444444;
+            --header-bg: #2c2c2c;
+        }
 
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: var(--text-primary);
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header h2 {
+            color: var(--accent-color);
+            margin: 5px 0 0;
+            font-weight: 300;
+            font-size: 1.5em;
+        }
+        
+        h3 {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        /* --- Tab System --- */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-button {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-button.active {
+            color: var(--text-primary);
+            border-bottom: 3px solid var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 25px 5px;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* --- Nested Tabs for Stakeholders --- */
+        .nested-tabs-container {
+            background-color: #252525;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .nested-tabs .tab-button {
+            padding: 10px 15px;
+            font-size: 0.9em;
+        }
+
+        /* --- Table Styling --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--header-bg);
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        strong {
+             color: var(--text-primary);
+        }
+
+        /* --- Image Styling --- */
+        .matrix-image {
+            max-width: 80%;
+            display: block;
+            margin: 40px auto;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+        }
+        
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: -20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Mémo Interactif : Analyse Stratégique des Parties Prenantes</h1>
+            <h2>Livrable Étape 1 - Diagnostic RSE Petzl</h2>
+        </header>
+
+        <div class="tabs main-tabs">
+            <button class="tab-button active" onclick="openTab(event, 'main-tab-group', 'etat-actuel')">État Actuel</button>
+            <button class="tab-button" onclick="openTab(event, 'main-tab-group', 'horizon-futur')">Horizon 3-5 Ans</button>
+        </div>
+
+        <div id="etat-actuel" class="tab-content main-tab-group active">
+            <h3>Synthèse & Contexte Stratégique Actuel</h3>
+            <p>
+                L'objectif de cette première étape du diagnostic RSE de Petzl est de dépasser la simple liste d'acteurs pour développer une cartographie complète et stratégique des parties prenantes internes et externes. Cette analyse sert d'outil dynamique d'aide à la décision, conçu pour aligner la gestion des parties prenantes directement avec la stratégie de durabilité de Petzl. L'approche est systémique, utilisant une matrice à double axe pour positionner stratégiquement chaque partie prenante en fonction de son **Pouvoir** actuel et de son **Influence/Intérêt**.
+            </p>
+            <p>
+                Cette première cartographie fournit une base solide pour comprendre l'écosystème complexe de Petzl, anticiper les attentes sociétales immédiates et réduire les risques relationnels.
+            </p>
+
+            <h3>Matrice d'Analyse des Parties Prenantes (État Actuel)</h3>
+            <img src="images/Matrice d'analyse des parties prenantes Petzl.png" alt="Matrice d'analyse des parties prenantes Petzl" class="matrix-image">
+            <p class="image-caption">
+                Le graphique représente le positionnement des parties prenantes sur deux axes : Pouvoir (vertical) et Influence (horizontal). Les positions futures (3-5 ans) y sont également projetées pour une vision dynamique.
+            </p>
+
+            <h3>Analyse Détaillée par Catégorie d'Engagement</h3>
+            <div class="nested-tabs-container">
+                <div class="tabs nested-tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'nested-tab-group-1', 'impliquer')">À impliquer étroitement</button>
+                    <button class="tab-button" onclick="openTab(event, 'nested-tab-group-1', 'satisfaire')">À satisfaire</button>
+                    <button class="tab-button" onclick="openTab(event, 'nested-tab-group-1', 'informer')">À tenir informé</button>
+                    <button class="tab-button" onclick="openTab(event, 'nested-tab-group-1', 'surveiller')">À surveiller</button>
+                </div>
+
+                <div id="impliquer" class="tab-content nested-tab-group-1 active">
+                    <table>
+                        <tr><th>Partie Prenante</th><th>Pouvoir</th><th>Influence</th><th>Justification Clé</th></tr>
+                        <tr><td><strong>Actionnaires Familiaux</strong></td><td>10</td><td>9</td><td>Détention du capital et décisions stratégiques finales.</td></tr>
+                        <tr><td><strong>Comité Exécutif / Direction</strong></td><td>9</td><td>10</td><td>Autorité sur l'exécution, le budget et la mise en œuvre de la feuille de route RSE.</td></tr>
+                        <tr><td><strong>Distributeurs Stratégiques</strong></td><td>8</td><td>8</td><td>Représentent 98% du CA et peuvent imposer leurs propres exigences RSE (ex: SBTi).</td></tr>
+                        <tr><td><strong>Organismes de Normalisation</strong></td><td>9</td><td>8</td><td>Définissent les normes obligatoires pour l'accès au marché. La non-conformité bloque les ventes.</td></tr>
+                        <tr><td><strong>Clients Institutionnels</strong></td><td>8</td><td>8</td><td>Volume d'achat important et capacité à fixer des spécifications strictes.</td></tr>
+                        <tr><td><strong>Salariés & Équipes Internes</strong></td><td>7</td><td>8</td><td>Capacité à porter ou freiner les initiatives RSE ; leur adhésion est critique.</td></tr>
+                        <tr><td><strong>Fournisseurs Stratégiques</strong></td><td>7</td><td>7</td><td>Leur défaillance peut stopper la production ; leur performance impacte le Scope 3.</td></tr>
+                    </table>
+                </div>
+
+                <div id="satisfaire" class="tab-content nested-tab-group-1">
+                    <table>
+                        <tr><th>Partie Prenante</th><th>Pouvoir</th><th>Influence</th><th>Justification Clé</th></tr>
+                        <tr><td><strong>Org. de Certification (B Corp...)</strong></td><td>8</td><td>4</td><td>Impact sur la réputation et l'accès marché, mais leur méthodologie est externe.</td></tr>
+                        <tr><td><strong>Partenaires Financiers & Assureurs</strong></td><td>7</td><td>4</td><td>Fournissent le capital et la couverture des risques, focus sur les risques ESG.</td></tr>
+                        <tr><td><strong>Instances Représentatives du Personnel</strong></td><td>7</td><td>3</td><td>Statut légal pour négocier/bloquer les décisions sociales.</td></tr>
+                    </table>
+                </div>
+                
+                <div id="informer" class="tab-content nested-tab-group-1">
+                     <table>
+                        <tr><th>Partie Prenante</th><th>Pouvoir</th><th>Influence</th><th>Justification Clé</th></tr>
+                        <tr><td><strong>Utilisateurs Finaux</strong></td><td>3</td><td>9</td><td>Pouvoir d'achat collectif et capacité à façonner la réputation de la marque.</td></tr>
+                        <tr><td><strong>ONG Environnementales</strong></td><td>3</td><td>8</td><td>Crédibilité et capacité à mobiliser l'opinion publique.</td></tr>
+                        <tr><td><strong>Médias Spécialisés & Influenceurs</strong></td><td>4</td><td>8</td><td>Leaders d'opinion clés qui peuvent amplifier les messages.</td></tr>
+                    </table>
+                </div>
+
+                <div id="surveiller" class="tab-content nested-tab-group-1">
+                    <table>
+                        <tr><th>Partie Prenante</th><th>Pouvoir</th><th>Influence</th><th>Justification Clé</th></tr>
+                        <tr><td><strong>Principaux Concurrents</strong></td><td>2</td><td>3</td><td>Leurs actions sont des "signaux faibles" pour l'intelligence stratégique.</td></tr>
+                        <tr><td><strong>Partenaires Logistiques & Transport</strong></td><td>3</td><td>3</td><td>Interchangeables mais leur importance croît avec l'enjeu du Scope 3.</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <h3>De l'Analyse à l'Action : Prochaines Étapes</h3>
+            <p>
+                Cette cartographie est un outil fondamental qui informe directement les prochaines étapes de la méthodologie RSE. Elle permet de prioriser les écoutes (<strong>Étape 2: Enjeux</strong>), de cibler les recherches (<strong>Étapes 3&4: Diagnostics</strong>), d'alimenter la matrice de matérialité (<strong>Étape 5</strong>) et de définir des plans d'engagement adaptés à chaque catégorie de partie prenante (<strong>Étape 6</strong>).
+            </p>
+        </div>
+
+        <div id="horizon-futur" class="tab-content main-tab-group">
+            <h3>Synthèse de l'Évolution Projetée à 3-5 ans</h3>
+            <p>
+                L'analyse prospective révèle un déplacement significatif du centre de gravité du paysage des parties prenantes, tiré par deux forces majeures : la **transformation numérique** et la **conscience écologique croissante**. Cette évolution va rehausser l'importance stratégique des **utilisateurs finaux** et des **partenaires technologiques**, tout en forçant une redéfinition du partenariat avec les distributeurs traditionnels. L'agilité devient impérative.
+            </p>
+            
+            <h3>Tendances Clés Moteur de l'Évolution</h3>
+             <table>
+                <tr><th>Tendance</th><th>Impact sur Petzl</th></tr>
+                <tr><td><strong>Transformation Numérique & Vente Directe (D2C)</strong></td><td>Remet en cause la dépendance aux distributeurs et fait des données clients un actif stratégique.</td></tr>
+                <tr><td><strong>Conscience Écologique Accrue</strong></td><td>La durabilité (réparabilité, fin de vie) devient un critère d'achat majeur et une opportunité de différenciation.</td></tr>
+                <tr><td><strong>Pression Concurrentielle</strong></td><td>La menace des alternatives à bas coût et des concurrents agiles sur le high-tech (lampes frontales) s'intensifie.</td></tr>
+                <tr><td><strong>Évolution Réglementaire</strong></td><td>De nouvelles règles sur la réparabilité et la sécurité créent des contraintes mais aussi des opportunités de valoriser la qualité Petzl.</td></tr>
+            </table>
+
+            <h3>Principaux Changements de Positionnement</h3>
+            <table>
+                <tr><th>Partie Prenante</th><th>Position Actuelle</th><th>Position Future</th><th>Raison du Changement</th></tr>
+                <tr><td><strong>Utilisateurs Finaux</strong></td><td>À tenir informé</td><td><strong>À impliquer étroitement</strong></td><td>Le virage D2C leur donne un pouvoir économique direct et fait de leurs données un actif stratégique.</td></tr>
+                <tr><td><strong>Partenaires Technologiques</strong></td><td>À surveiller</td><td><strong>À informer / Impliquer</strong></td><td>Deviennent essentiels pour combler le retard sur les produits high-tech et connectés.</td></tr>
+                <tr><td><strong>Distributeurs / Détaillants</strong></td><td>À impliquer étroitement</td><td>À impliquer (rôle évolue)</td><td>Leur pouvoir reste élevé, mais leur rôle évolue vers un partenariat pour la data et l'économie circulaire (reprise, réparation).</td></tr>
+                 <tr><td><strong>Org. de Certification</strong></td><td>À satisfaire</td><td>À satisfaire (importance +)</td><td>Leur pouvoir de "gardien" de la crédibilité RSE augmente avec la méfiance envers le greenwashing.</td></tr>
+            </table>
+            
+            <h3>Actions Recommandées pour une Gestion Dynamique</h3>
+            <ul>
+                <li><strong>Pour l'Utilisateur Final :</strong> Accélérer la transition D2C et investir massivement dans les plateformes CRM et l'analyse de données pour exploiter les retours clients dans la R&D.</li>
+                <li><strong>Pour les Distributeurs :</strong> Redéfinir le partenariat au-delà du commercial pour co-développer des programmes de circularité (reprise, réparation) et explorer le partage de données.</li>
+                <li><strong>Pour les Partenaires Technologiques :</strong> Mettre en place une stratégie d'innovation ouverte pour scouter et former des alliances avec des experts en IoT, capteurs et IA.</li>
+                <li><strong>Pour les "Gardiens" (Certificateurs) :</strong> Utiliser proactivement les certifications et la conformité réglementaire comme un actif marketing pour se différencier des offres à bas coût.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabGroupName, tabName) {
+            // Get all elements with class="tab-content" in the specified group and hide them
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName(tabGroupName);
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tab-button" in the same container and remove the class "active"
+            tablinks = evt.currentTarget.parentElement.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Initialize the default open tab for each tab group
+        document.addEventListener("DOMContentLoaded", function() {
+            // Main tabs
+            document.querySelector(".main-tabs .tab-button").click();
+            // Nested tabs
+            document.querySelector(".nested-tabs .tab-button").click();
+        });
+
+    </script>
+</body>
+</html>
